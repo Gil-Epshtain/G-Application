@@ -1,0 +1,59 @@
+<!-- *** Settings Page *** -->
+<div class="settings-page-container">
+
+    <!-- Version Number -->
+    <div class="settings-item">
+
+        <div class="settings-item-text">
+            {{ mainCtrl.AppData.Strings._SettingsPage_VersionNumber_ }}
+        </div>
+
+        <div class="settings-item-control">
+            {{ settingsCtrl.versionNumber }}
+        </div>
+    </div>
+
+    <!-- Separation Line -->
+    <div class="settings-item-line"></div>
+
+    <!-- Language -->
+    <div class="settings-item">
+
+        <g-drop-down-list
+                text="{{ mainCtrl.AppData.Strings._SettingsPage_Language_ }}"
+                items="settingsCtrl.dropDownLanguages_Items"
+                selected-item="settingsCtrl.dropDownLanguages_SelectedItem"
+                on-change="settingsCtrl.onClick_DropDownLanguagesItem(selectedItem)">
+        </g-drop-down-list>
+    </div>
+
+    <!-- Separation Line -->
+    <div class="settings-item-line"></div>
+
+    <!-- Show/Hide StatusBar  -->
+    <div class="settings-item">
+
+        <g-checkbox-switch
+                text="{{ mainCtrl.AppData.Strings._SettingsPage_ShowStatusBar_ }}"
+                is-checked="settingsCtrl.switchStatusBar_isOn"
+                on-click="settingsCtrl.onClick_SwitchStatusBar(isChecked)">
+        </g-checkbox-switch>
+    </div>
+
+    <!-- Separation Line -->
+    <div class="settings-item-line"></div>
+
+    <!-- Allow Notifications -->
+    <div class="settings-item">
+
+        <g-checkbox
+                text="{{ mainCtrl.AppData.Strings._SettingsPage_AllowNotifications_ }}"
+                is-checked="settingsCtrl.isAllowNotifications"
+                on-click="settingsCtrl.onClick_CheckBoxAllowNotification(isChecked)">
+        </g-checkbox>
+    </div>
+
+    <!-- Separation Line -->
+    <div class="settings-item-line"></div>
+
+</div>

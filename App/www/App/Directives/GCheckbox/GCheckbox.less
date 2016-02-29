@@ -1,0 +1,61 @@
+// Import Variables (Colors, Sizes etc)
+@import './../../Style/AppStyle';
+
+// Checkbox Style
+.g-checkbox-container
+{
+  position: relative;
+  display: block;
+  height: 50px;
+
+  // Text
+  .g-checkbox-text
+  {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    text-align: @text-direction;
+    color: @color-text;
+    font-family: TypoC-Regular;
+    font-size: @font-size-controls;
+    white-space: nowrap;
+  }
+
+  // Checkbox Container
+  .g-checkbox-item
+  {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    text-align: @text-direction-negative;
+
+    .g-checkbox
+    {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      background-color: @color-checkbox-inactive;
+      width: 20px;
+      height: 20px;
+      margin: 15px;
+      border: 1px solid;
+      border-radius: 5px;
+    }
+
+    // Checked:
+    .g-checkbox-checked
+    {
+      background-color: @color-checkbox-active;
+    }
+    .g-checkbox-checked:before
+    {
+      content: '\2713'; // V - Sign
+      position: relative;
+      left: 2px;
+      bottom: 27px;
+      font-size: 0.9em;
+    }
+  }
+}

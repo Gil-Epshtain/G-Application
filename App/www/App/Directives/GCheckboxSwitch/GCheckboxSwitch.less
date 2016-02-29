@@ -1,0 +1,77 @@
+@import './../../Style/AppStyle';
+
+// Checkbox Switch Style
+.g-checkbox-switch-container
+{
+  position: relative;
+  display: block;
+  height: 50px;
+  white-space: nowrap;
+
+  // Text
+  .g-checkbox-switch-text
+  {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    text-align: @text-direction;
+    color: @color-text;
+    font-family: TypoC-Regular;
+    font-size: @font-size-controls;
+    white-space: nowrap;
+  }
+
+  // Switch Container
+  .g-checkbox-switch-item
+  {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    text-align: @text-direction-negative;
+
+    // Switch (circle container)
+    .g-checkbox-switch
+    {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      width: 50px;
+      height: 30px;
+      margin: 0 5px;
+      border: 2px solid @color-switch-border;
+      border-radius: 20px;
+      background-color: @color-switch-inactive;
+      transition: all @animation-interval-checkbox-switch ease-in 0s;
+    }
+    // Circle
+    .g-checkbox-switch-circle
+    {
+      position: relative;
+      background-color: @color-switch-active;
+      border: 2px solid @color-switch-border;
+      width: 28px;
+      height: 28px;
+      border-radius: 28px;
+      top: -1px;
+      right: 20px;
+
+      -webkit-transition: right @animation-interval-checkbox-switch; /* Safari */
+      transition: right @animation-interval-checkbox-switch;
+      transition: all @animation-interval-checkbox-switch ease-in 0s; // for color change
+    }
+
+    // Switch - Checked
+    .g-checkbox-switch-checked
+    {
+      background-color: @color-switch-active;
+    }
+    // Circle - Checked
+    .g-checkbox-switch-circle-checked
+    {
+      background-color: @color-switch-inactive;
+      right: -1px;
+    }
+  }
+}

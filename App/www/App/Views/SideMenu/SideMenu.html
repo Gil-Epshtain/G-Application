@@ -1,0 +1,35 @@
+<!-- *** Side-Menu *** -->
+<div id="sideMenu"
+     class="side-menu-container"
+     ng-class="{ 'side-menu-open': mainCtrl.AppData.isSideMenuOpen }">
+
+    <div ng-repeat="menuItem in mainCtrl.AppData.SideMenuItems"
+         ng-class="{ 'menu-item-active': sideMenuCtrl.isActiveMenuItem(menuItem), 'menu-item-press': menuItem.isPressStyle }"
+         ng-click="sideMenuCtrl.onClick_SideMenuItem(menuItem);" >
+
+        <!-- Menu Item -->
+        <div class="menu-item">
+            <!-- Menu Item Text -->
+            <div class="menu-item-text">
+                {{ menuItem.text }}
+            </div>
+
+            <!-- Menu Item Icon -->
+            <div class="menu-item-icon">
+                <img ng-src="{{sideMenuCtrl.getMenuItemIcon(menuItem)}}"
+                     class="menu-item-icon-img">
+            </div>
+        </div>
+
+        <!-- Menu Item Line-->
+        <div class="menu-item-line"></div>
+    </div>
+
+    <!-- Harts Image -->
+    <div class="side-menu-hearts">
+
+        <img ng-src="App/Assets/Images/Images/Hearts.png"
+             class="side-menu-hearts-img" />
+    </div>
+
+</div>
