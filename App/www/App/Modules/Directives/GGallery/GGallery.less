@@ -1,0 +1,94 @@
+// Import Variables (Colors, Sizes etc)
+@import './../../../Style/AppStyle';
+
+// Gallery
+.g-gallery-container
+{
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: auto;
+  top: @size-height-sub-header;
+  bottom: 0;
+  overflow-y: scroll;
+
+  .g-gallery-title
+  {
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 5px 0;
+    text-align: center;
+    font-family: TypoC-Regular;
+    font-size: @font-size-gallery-title;
+  }
+
+  .g-gallery-items-container
+  {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+
+    .g-gallery-item
+    {
+      position: relative;
+      display: inline-block;
+      width: 140px;
+      height: 130px;
+      margin: 5px 10px;
+
+      .g-gallery-item-photo
+      {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        .g-gallery-item-photo-img
+        {
+          position: relative;
+          display: block;
+          max-height: 100%;
+          max-width: 100%;
+        }
+      }
+
+      .g-gallery-item-text
+      {
+        position: relative;
+        display: block;
+        height: 30px;
+        font-family: TypoC-Cond;
+        font-size: @font-size-gallery-item;
+        line-height: 33px;
+
+        background-color: @color-gallery-text;
+      }
+    }
+  }
+
+  .g-gallery-back-to-top
+  {
+    display: block;
+    position: relative;
+    background-color: @color-gallery-back-to-top;
+    margin: 0 auto 15px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid;
+    border-radius: 40px;
+
+    .g-gallery-back-to-top-img
+    {
+      display: inline-block;
+      position: relative;
+      top: 10%;
+      width: 70%;
+      height: 70%;
+    }
+  }
+  .g-gallery-back-to-top-press
+  {
+    background-color: @color-gallery-back-to-top-press;
+  }
+}

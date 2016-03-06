@@ -1,0 +1,35 @@
+[
+  {
+    "id": "/homePage",
+    "text": "",
+    "pageTitle": "",
+    "icon":
+    {
+      "active":   "App/Assets/Images/Icons/Home-icon-hexBE1912.png",
+      "inactive": "App/Assets/Images/Icons/Home-icon-white.png"
+    },
+    "state": "body.homePage"
+  },
+  {
+    "id": "/gallery",
+    "text": "",
+    "pageTitle": "",
+    "icon":
+    {
+      "active":   "App/Assets/Images/Icons/Love-icon-hexBE1912.png",
+      "inactive": "App/Assets/Images/Icons/Love-icon-white.png"
+    },
+    "state": "body.gallery"
+  },
+  {
+    "id": "/settings",
+    "text": "",
+    "pageTitle": "",
+    "icon":
+    {
+      "active":   "App/Assets/Images/Icons/Settings-icon-hexBE1912.png",
+      "inactive": "App/Assets/Images/Icons/Settings-icon-white.png"
+    },
+    "state": "body.settings"
+  }
+]

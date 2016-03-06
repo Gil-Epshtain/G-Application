@@ -1,0 +1,46 @@
+// Import Variables (Colors, Sizes etc)
+@import './../../../Style/AppStyle';
+
+/*** Settings Page ***/
+.settings-page-container
+{
+  .settings-item
+  {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    font-family: TypoC-Regular;
+    font-size: @font-size-settings-page;
+    white-space: nowrap;
+
+    .settings-item-text
+    {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      width: 45%;
+      text-align: @text-direction;
+    }
+
+    .settings-item-control
+    {
+      position: relative;
+      display: inline-block;
+      height: 100%;
+      width: 45%;
+      text-align: @text-direction-negative;
+    }
+  }
+
+  .settings-item-line
+  {
+    position: absolute;
+    display: block;
+    background-color: @color-separation-line;
+    width: 85%;
+    height: 3px;
+    left: 7.5%;
+  }
+}

@@ -2,21 +2,23 @@
 
 'use strict';
 
-module.exports = function(ngModule)
+export default function(ngApp)
 {
-    ngModule
+    ngApp
         .run(runApp);
 
     function runApp()
     {
         console.log("~*~ Welcome to G-Application ~*~");
-        console.log("App stared at: " + getTimeFormat());
+        console.log("App stared at: " + getTimeString());
 
-        function getTimeFormat(time) // Return the time in string format: "hh:mm dd/mm/yyyy"
+        function getTimeString(time)
         {
+            // Return the time in string format: "hh:mm dd/mm/yyyy"
+
             time = time ? time : new Date();
 
-            return (time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds() + " " + +time.getDate() + "/" + (time.getMonth() + 1) + "/" + time.getFullYear());
+            return `${ time.getHours() }:${ time.getMinutes() }:${ time.getSeconds() } ${ time.getDate() }/${ time.getMonth() + 1 }/${ time.getFullYear() }`;
         }
     }
 };

@@ -2,9 +2,9 @@
 
 'use strict';
 
-module.exports = (ngModule) =>
+export default function(ngApp)
 {
-    ngModule
+    ngApp
         .config(appRouter);
 
     function appRouter($stateProvider, $urlRouterProvider)
@@ -30,19 +30,19 @@ module.exports = (ngModule) =>
                         // Application container (the only child view of index.html)
                         '':
                         {
-                            templateUrl: "App/Views/MainPage/Main.html",
+                            templateUrl: "App/Modules/Views/MainPage/Main.html",
                             controller: "MainController as mainCtrl"
                         },
                         // SideMenu (nested in body view)
                         'sideMenu@body':
                         {
-                            templateUrl: "App/Views/SideMenu/SideMenu.html",
+                            templateUrl: "App/Modules/Views/SideMenu/SideMenu.html",
                             controller: "SideMenuController as sideMenuCtrl"
                         },
                         // Header (nested in body view)
                         'header@body':
                         {
-                            templateUrl: "App/Views/Header/Header.html",
+                            templateUrl: "App/Modules/Views/Header/Header.html",
                             controller: "HeaderController as headerCtrl"
                         }//,
                         // Footer (nested in body view)
@@ -62,7 +62,7 @@ module.exports = (ngModule) =>
             .state('body.homePage',
                 {
                     url: "/homePage",
-                    templateUrl: "App/Views/HomePage/HomePage.html",
+                    templateUrl: "App/Modules/Views/HomePage/HomePage.html",
                     controller: "HomePageController as homePageCtrl"
                 })
 
@@ -70,7 +70,7 @@ module.exports = (ngModule) =>
             .state('body.gallery',
                 {
                     url: "/gallery",
-                    templateUrl: "App/Views/GalleryPage/Gallery.html",
+                    templateUrl: "App/Modules/Views/GalleryPage/Gallery.html",
                     controller: "GalleryController as galleryCtrl"
                 })
 
@@ -78,7 +78,7 @@ module.exports = (ngModule) =>
             .state('body.settings',
                 {
                     url: "/settings",
-                    templateUrl: "App/Views/SettingsPage/Settings.html",
+                    templateUrl: "App/Modules/Views/SettingsPage/Settings.html",
                     controller: "SettingsController as settingsCtrl"
                 })
         ;
