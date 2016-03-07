@@ -115,9 +115,55 @@
     ]
   },
   {
-    "galleryId": "/g2",
-    "galleryTitle": "אלבום 2",
-    "images": []
+    "galleryId": "/testAlbum",
+    "galleryTitle": "אלבום לבדיקה :-)",
+    "images":
+    [
+      {
+        "id": "/testAlbum/test1",
+        "text": "תמונה 1",
+        "image":
+        {
+          "thumbnail": "App/Assets/Images/Photos/test1.jpg",
+          "picture":   "App/Assets/Images/Photos/test1.jpg"
+        }
+      },{
+        "id": "/testAlbum/test2",
+        "text": "תמונה 2",
+        "image":
+        {
+          "thumbnail": "App/Assets/Images/Photos/test2.jpg",
+          "picture":   "App/Assets/Images/Photos/test2.jpg"
+        }
+      },
+      {
+        "id": "/testAlbum/test3",
+        "text": "תמונה 3",
+        "image":
+        {
+          "thumbnail": "App/Assets/Images/Photos/test3.jpg",
+          "picture":   "App/Assets/Images/Photos/test3.jpg"
+        }
+      },
+      {
+        "id": "/testAlbum/test4",
+        "text": "תמונה 4",
+        "image":
+        {
+          "thumbnail": "App/Assets/Images/Photos/test4.jpg",
+          "picture":   "App/Assets/Images/Photos/test4.jpg"
+        }
+      },
+      {
+        "id": "/testAlbum/test5",
+        "text": "תמונה 5",
+        "image":
+        {
+          "thumbnail": "App/Assets/Images/Photos/test5.jpg",
+          "picture":   "App/Assets/Images/Photos/test5.jpg"
+        }
+      }
+    ]
   },
   {
     "galleryId": "/g3",

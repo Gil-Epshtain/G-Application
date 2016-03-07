@@ -2,14 +2,33 @@
 
 'use strict';
 
+import mainPageTemplate     from './Modules/Views/MainPage/Main.html';
+
+import sideMenuTemplate     from './Modules/Views/SideMenu/SideMenu.html';
+import headerTemplate       from './Modules/Views/Header/Header.html';
+
+import homePageTemplate     from './Modules/Views/HomePage/HomePage.html';
+import galleryPageTemplate  from './Modules/Views/GalleryPage/GalleryPage.html';
+import settingsPageTemplate from './Modules/Views/SettingsPage/Settings.html';
+
 export default function(ngApp)
 {
     ngApp
-        .config(appRouter);
+        .config(
+            [
+                '$stateProvider',
+                '$urlRouterProvider',
+                '$httpProvider',
+                appRouter
+            ]);
 
-    function appRouter($stateProvider, $urlRouterProvider)
+    function appRouter($stateProvider, $urlRouterProvider, $httpProvider)
     {
         console.log("Router: Initializing...");
+
+        // Allow Cross Origin using $http
+        // delete $httpProvider.defaults.headers.common['X-Requested-With'];
+        // $httpProvider.defaults.useXDomain = true;
 
         // Default route
         $urlRouterProvider.otherwise('/body/homePage');
@@ -30,21 +49,21 @@ export default function(ngApp)
                         // Application container (the only child view of index.html)
                         '':
                         {
-                            templateUrl: "App/Modules/Views/MainPage/Main.html",
+                            template: mainPageTemplate,
                             controller: "MainController as mainCtrl"
                         },
                         // SideMenu (nested in body view)
                         'sideMenu@body':
                         {
-                            templateUrl: "App/Modules/Views/SideMenu/SideMenu.html",
+                            template: sideMenuTemplate,
                             controller: "SideMenuController as sideMenuCtrl"
                         },
                         // Header (nested in body view)
                         'header@body':
                         {
-                            templateUrl: "App/Modules/Views/Header/Header.html",
+                            template: headerTemplate,
                             controller: "HeaderController as headerCtrl"
-                        }//,
+                        }
                         // Footer (nested in body view)
                         //'footer@body':
                         //{
@@ -62,7 +81,7 @@ export default function(ngApp)
             .state('body.homePage',
                 {
                     url: "/homePage",
-                    templateUrl: "App/Modules/Views/HomePage/HomePage.html",
+                    template: homePageTemplate,
                     controller: "HomePageController as homePageCtrl"
                 })
 
@@ -70,7 +89,7 @@ export default function(ngApp)
             .state('body.gallery',
                 {
                     url: "/gallery",
-                    templateUrl: "App/Modules/Views/GalleryPage/Gallery.html",
+                    template: galleryPageTemplate,
                     controller: "GalleryController as galleryCtrl"
                 })
 
@@ -78,7 +97,7 @@ export default function(ngApp)
             .state('body.settings',
                 {
                     url: "/settings",
-                    templateUrl: "App/Modules/Views/SettingsPage/Settings.html",
+                    template: settingsPageTemplate,
                     controller: "SettingsController as settingsCtrl"
                 })
         ;

@@ -3,6 +3,7 @@
 'use strict';
 
 import './GPopUp.less';
+import gPopUpTemplate from './GPopUp.html';
 
 export default function(ngModule)
 {
@@ -16,31 +17,10 @@ export default function(ngModule)
     {
         console.log("G-PopUp: Initializing...");
 
-        const linkFunc = function(scope, element, attrs)
-        {
-            // Click: Close 'X' Button
-            scope.onClick_ClosePopUp = function()
-            {
-                console.log("G-PopUp: Click -> Close");
-
-                scope.closePopUp();
-            };
-
-            // Close PopUp
-            scope.closePopUp = function()
-            {
-                console.log("G-PopUp: Closing");
-
-                scope.onClose();
-
-                scope.isVisible = false;
-            }
-        };
-
         let gPopUp =
         {
             restrict: 'AE',
-            templateUrl: "App/Modules/Directives/GPopUp/GPopup.html",
+            template: gPopUpTemplate,
             link: linkFunc,
             scope:
             {
@@ -71,6 +51,27 @@ export default function(ngModule)
             // -> "&" Callback (function)
             // -> "=" Two way binding. don't use {{ }}, data stored in scope
         };
+
+        function linkFunc(scope, element, attrs)
+        {
+            // Click: Close 'X' Button
+            scope.onClick_ClosePopUp = function()
+            {
+                console.log("G-PopUp: Click -> Close");
+
+                scope.closePopUp();
+            };
+
+            // Close PopUp
+            scope.closePopUp = function()
+            {
+                console.log("G-PopUp: Closing");
+
+                scope.onClose();
+
+                scope.isVisible = false;
+            }
+        }
 
         return gPopUp;
     }

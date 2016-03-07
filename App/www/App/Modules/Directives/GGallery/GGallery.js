@@ -3,6 +3,7 @@
 'use strict';
 
 import './GGallery.less';
+import gGalleryTemplate from './GGallery.html';
 
 export default function(ngModule)
 {
@@ -18,7 +19,24 @@ export default function(ngModule)
     {
         console.log("G-Gallery: Initializing...");
 
-        const linkFunc = function(scope, element, attrs)
+        let gGallery =
+        {
+            restrict: 'AE',
+            template: gGalleryTemplate,
+            link: linkFunc,
+            scope:
+            {
+                galleryTitle: '=',
+                galleryItems: '=',
+                clickGalleryItemCallback: '&'
+            }
+
+            // -> '@' String: (with expression {{ }} ), data stored in attrs
+            // -> '&' Callback (function)
+            // -> '=' Two way binding. don't use {{ }}, data stored in scope
+        };
+
+        function linkFunc(scope, element, attrs)
         {
             // OnChange: Gallery Items (new Gallery)
             scope.$watch('galleryItems', function(newValue, oldValue)
@@ -76,24 +94,7 @@ export default function(ngModule)
 
                 console.log(`G-Gallery: Gallery Ready -> BackToTop [${ (scope.isShowBackToTopButton ? "Show" : "Hide") } - WindowHeight:'${ windowHeight }'; gGalleryHeight:'${ gGalleryHeight }']`);
             }
-        };
-
-        let gGallery =
-        {
-            restrict: 'AE',
-            templateUrl: "App/Modules/Directives/GGallery/GGallery.html",
-            link: linkFunc,
-            scope:
-            {
-                galleryTitle: '=',
-                galleryItems: '=',
-                clickGalleryItemCallback: '&'
-            }
-
-            // -> '@' String: (with expression {{ }} ), data stored in attrs
-            // -> '&' Callback (function)
-            // -> '=' Two way binding. don't use {{ }}, data stored in scope
-        };
+        }
 
         return gGallery;
     }

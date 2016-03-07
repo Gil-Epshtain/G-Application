@@ -1,7 +1,11 @@
 /* Created by Gil on 26/02/2016 */
 
+// $ npm install x-webpack-loader -D
+// -S is '--save'     Package will appear in your dependencies.
+// -D is '--save-dev' Package will appear in your devDependencies.
+
 // Cordova Plugin
-var CordovaPlugin = require('webpack-cordova-plugin');
+//var CordovaPlugin = require('webpack-cordova-plugin');
 
 // WebPack Configuration
 module.exports =
@@ -72,16 +76,16 @@ module.exports =
     },
 
     // support source maps
-    devtool: "#inline-source-map",
+    devtool: "#inline-source-map"
 
-    plugins:
-    [
-        new CordovaPlugin(
-            {
-                config:   'config.xml', // Location of Cordova' config.xml (will be created if not found)
-                src:      'index.html', // Set entry-point of cordova in config.xml
-                platform: 'android',    // ('android' or 'ios') Set `webpack-dev-server` to correct `contentBase` to use Cordova plugins.
-                version:  true          // Set config.xml' version. (true = use version from package.json)
-            })
-    ]
+    //plugins:
+    //[
+    //    new CordovaPlugin(
+    //        {
+    //            config:   'config.xml', // Location of Cordova' config.xml (will be created if not found)
+    //            src:      'index.html', // Set entry-point of cordova in config.xml
+    //            platform: 'android',    // ('android' or 'ios') Set `webpack-dev-server` to correct `contentBase` to use Cordova plugins.
+    //            version:  true          // Set config.xml' version. (true = use version from package.json)
+    //        })
+    //]
 };

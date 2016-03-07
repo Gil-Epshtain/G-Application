@@ -3,6 +3,7 @@
 'use strict';
 
 import './GCheckboxSwitch.less';
+import gCheckboxSwitchTemplate from'./GCheckboxSwitch.html';
 
 export default function(ngModule)
 {
@@ -16,23 +17,10 @@ export default function(ngModule)
     {
         console.log("G-CheckboxSwitch: Initializing...");
 
-        const linkFunc = function(scope, element, attrs)
-        {
-            // OnClick
-            scope.onClick_Switch = function()
-            {
-                scope.isChecked = !scope.isChecked;
-
-                console.log(`G-CheckboxSwitch: Click -> CheckboxSwipe [${ (scope.text ? ("'" + scope.text + "':: ") : "") + (scope.isChecked ? "On" : "Off") }]`);
-
-                scope.onClick({ isChecked: scope.isChecked });
-            };
-        };
-
         let gCheckboxSwitch =
         {
             restrict: 'AE',
-            templateUrl: "App/Modules/Directives/GCheckboxSwitch/GCheckboxSwitch.html",
+            template: gCheckboxSwitchTemplate,
             link: linkFunc,
             scope:
             {
@@ -45,6 +33,19 @@ export default function(ngModule)
             // -> "&" Callback (function)
             // -> "=" Two way binding. don't use {{ }}, data stored in scope
         };
+
+        function linkFunc(scope, element, attrs)
+        {
+            // OnClick
+            scope.onClick_Switch = function()
+            {
+                scope.isChecked = !scope.isChecked;
+
+                console.log(`G-CheckboxSwitch: Click -> CheckboxSwipe [${ (scope.text ? ("'" + scope.text + "':: ") : "") + (scope.isChecked ? "On" : "Off") }]`);
+
+                scope.onClick({ isChecked: scope.isChecked });
+            };
+        }
 
         return gCheckboxSwitch;
     }

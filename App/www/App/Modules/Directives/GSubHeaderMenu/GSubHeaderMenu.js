@@ -3,6 +3,7 @@
 'use strict';
 
 import './GSubHeaderMenu.less';
+import gSubHeaderMenuTemplate from './GSubHeaderMenu.html';
 
 export default function(ngModule)
 {
@@ -16,7 +17,23 @@ export default function(ngModule)
     {
         console.log("G-HeaderMenu: Initializing...");
 
-        const linkFunc = function(scope, element, attrs)
+        let gHeaderMenu =
+        {
+            restrict: 'AE',
+            template: gSubHeaderMenuTemplate,
+            link: linkFunc,
+            scope:
+            {
+                items: '=',             // items:    [{ id: '', text: '' }, {..}, ..]
+                clickItemCallback: '&'  // callback: function(headerMenuItem)
+            }
+
+            // -> '@' String: (with expression {{ }} ), data stored in attrs
+            // -> '&' Callback (function)
+            // -> '=' Two way binding. don't use {{ }}, data stored in scope
+        };
+
+        function linkFunc(scope, element, attrs)
         {
             scope.selectedItem = scope.items[0];
 
@@ -30,23 +47,7 @@ export default function(ngModule)
 
                 scope.clickItemCallback({ headerMenuItem: item });
             };
-        };
-
-        let gHeaderMenu =
-        {
-            restrict: 'AE',
-            templateUrl: "App/Modules/Directives/GSubHeaderMenu/GSubHeaderMenu.html",
-            link: linkFunc,
-            scope:
-            {
-                items: '=',             // items:    [{ id: '', text: '' }, {..}, ..]
-                clickItemCallback: '&'  // callback: function(headerMenuItem)
-            }
-
-            // -> '@' String: (with expression {{ }} ), data stored in attrs
-            // -> '&' Callback (function)
-            // -> '=' Two way binding. don't use {{ }}, data stored in scope
-        };
+        }
 
         return gHeaderMenu;
     }

@@ -40,6 +40,10 @@ Thumbs.db
 #####################
 App/node_modules/
 
+# WebPack Deploy #
+#####################
+App/dist/
+
 # Cordova (Platforms and Plugins)      #
 ########################################
 App/platforms/

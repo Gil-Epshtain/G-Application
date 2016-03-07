@@ -10,6 +10,7 @@ import gCheckboxSwitch from './GCheckboxSwitch/GCheckboxSwitch';
 import gButton         from './GButton/GButton';
 import gDropDownList   from './GDropDownList/GDropDownList';
 import gGallery        from './GGallery/GGallery';
+import gPhotoPreview   from './GPhotoPreview/GPhotoPreview';
 import gPopUp          from './GPopUp/GPopup';
 import gSubHeaderMenu  from './GSubHeaderMenu/GSubHeaderMenu';
 
@@ -24,6 +25,7 @@ gCheckboxSwitch (gDirectiveModule);
 gButton         (gDirectiveModule);
 gDropDownList   (gDirectiveModule);
 gGallery        (gDirectiveModule);
+gPhotoPreview   (gDirectiveModule);
 gPopUp          (gDirectiveModule);
 gSubHeaderMenu  (gDirectiveModule);
 

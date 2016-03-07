@@ -3,6 +3,7 @@
 'use strict';
 
 import './GDropDownList.less';
+import gDropDownListTemplate from './GDropDownList.html';
 
 export default function(ngModule)
 {
@@ -17,7 +18,28 @@ export default function(ngModule)
     {
         console.log("G-DropDownList: Initializing...");
 
-        const linkFunc = function(scope, element, attrs)
+        let gDropDownList =
+        {
+            restrict: 'AE',
+            template: gDropDownListTemplate,
+            link: linkFunc,
+            scope:
+            {
+                //isOpen: '=',
+                text: '@',
+                items: '=',
+                selectedItem: '=',
+                onChange: '&'
+
+                // items = [{ id: "", text: ""}, {...}, ..];
+            }
+
+            // -> "@" String: (with expression {{ }} ), data stored in attrs
+            // -> "&" Callback (function)
+            // -> "=" Two way binding. don't use {{ }}, data stored in scope
+        };
+
+        function linkFunc (scope, element, attrs)
         {
             scope.isOpen = false;
             scope.selectedItem = scope.selectedItem ? scope.selectedItem : scope.items[0]; // Default: first item selected
@@ -57,28 +79,7 @@ export default function(ngModule)
 
                 console.log(`G-DropDownList: Click -> gDropDownList ${ (scope.text ? ("'" + scope.text + "'") : "") + "[" + (scope.isOpen ? "Open" : "Close") }]`);
             };
-        };
-
-        let gDropDownList =
-        {
-            restrict: 'AE',
-            templateUrl: "App/Modules/Directives/GDropDownList/GDropDownList.html",
-            link: linkFunc,
-            scope:
-            {
-                //isOpen: '=',
-                text: '@',
-                items: '=',
-                selectedItem: '=',
-                onChange: '&'
-
-                // items = [{ id: "", text: ""}, {...}, ..];
-            }
-
-            // -> "@" String: (with expression {{ }} ), data stored in attrs
-            // -> "&" Callback (function)
-            // -> "=" Two way binding. don't use {{ }}, data stored in scope
-        };
+        }
 
         return gDropDownList;
     }

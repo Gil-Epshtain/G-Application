@@ -3,6 +3,7 @@
 'use strict';
 
 import './GButton.less';
+import gButtonTemplate from './GButton.html';
 
 export default function(ngModule)
 {
@@ -17,7 +18,24 @@ export default function(ngModule)
     {
         console.log("G-Button: Initializing...");
 
-        const linkFunc = function(scope, element, attrs)
+        let gButton =
+        {
+            restrict: 'AE',
+            template: gButtonTemplate,
+            link: linkFunc,
+            scope:
+            {
+                text: '@',
+                isActiveStyle: '@',
+                onClick: '&'
+            }
+
+            // -> "@" String: (with expression {{ }} ), data stored in attrs
+            // -> "&" Callback (function)
+            // -> "=" Two way binding. don't use {{ }}, data stored in scope
+        };
+
+        function linkFunc(scope, element, attrs)
         {
             scope.isPressStyle = false;
 
@@ -37,24 +55,7 @@ export default function(ngModule)
                     scope.onClick();
                 }, 250)
             };
-        };
-
-        let gButton =
-        {
-            restrict: 'AE',
-            templateUrl: "App/Modules/Directives/GButton/GButton.html",
-            link: linkFunc,
-            scope:
-            {
-                text: '@',
-                isActiveStyle: '@',
-                onClick: '&'
-            }
-
-            // -> "@" String: (with expression {{ }} ), data stored in attrs
-            // -> "&" Callback (function)
-            // -> "=" Two way binding. don't use {{ }}, data stored in scope
-        };
+        }
 
         return gButton;
     }

@@ -23,6 +23,8 @@ export default function(ngModule)
         galleryCtrl.subHeaderMenuItems = [];
         galleryCtrl.galleries = PhotosService.Galleries;
         galleryCtrl.currentGallery = galleryCtrl.galleries[0];
+        galleryCtrl.isPhotoPreviewVisible = false;
+        galleryCtrl.photoPreviewImage = "";
 
         // Init SubHeader with Galleries Title's
         for (let i = 0; i < galleryCtrl.galleries.length; i++)
@@ -49,6 +51,9 @@ export default function(ngModule)
         galleryCtrl.onClick_GalleryItem = function(galleryItem)
         {
             console.log(`GalleryController: Gallery Item Selected [${ galleryItem.id }]`);
+
+            galleryCtrl.isPhotoPreviewVisible = true;
+            galleryCtrl.photoPreviewImage = galleryItem.image.picture;
         };
     }
 };
