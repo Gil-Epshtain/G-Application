@@ -11,7 +11,7 @@
 module.exports =
 {
     // Working Directory:
-    context: __dirname + '/www',
+    context: __dirname + '/src',
 
     // App Entry Point:
     entry: './App/App.js',
@@ -19,14 +19,15 @@ module.exports =
     // Output file (bundle):
     output:
     {
-        path: './dist',
+        // Use www as output for cordova input
+        path: './www',
         filename: 'script.js'
     },
 
     // enable loading modules relatively
     resolve:
     {
-        root: [__dirname + "/www"]
+        root: [__dirname + "/src"]
     },
 
     module:
@@ -78,6 +79,7 @@ module.exports =
     // support source maps
     devtool: "#inline-source-map"
 
+    // Use this plugin only first time to create config.xml file.
     //plugins:
     //[
     //    new CordovaPlugin(

@@ -1,0 +1,23 @@
+<!-- *** Gallery Page *** -->
+<div class="gallery-page-container">
+
+    <!-- Photo Preview (PopUp)  -->
+    <g-photo-preview is-visible="galleryCtrl.isPhotoPreviewVisible"
+                     img-src="galleryCtrl.photoPreviewImage">
+    </g-photo-preview>
+
+    <!-- Sub Header -->
+    <g-sub-header-menu
+            items="galleryCtrl.subHeaderMenuItems"
+            click-item-callback="galleryCtrl.onClick_HeaderMenuItem(headerMenuItem)">
+    </g-sub-header-menu>
+
+    <!-- Photo Gallery -->
+    <g-gallery
+            gallery-title="galleryCtrl.currentGallery.galleryTitle"
+            gallery-items="galleryCtrl.currentGallery.images"
+            click-gallery-item-callback="galleryCtrl.onClick_GalleryItem(galleryItem)">
+
+    </g-gallery>
+
+</div>

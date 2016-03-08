@@ -1,0 +1,27 @@
+{
+  "_LocalCode_": "he-IL",
+
+  "_OK_":       "אישור",
+  "_Cancel_":   "ביטול",
+  "_Click_":    "לחץ כאן",
+  "_Error_":    "שגיאה",
+  "_Warning_":  "אזהרה",
+
+  "_HomePage_": "דף הבית",
+  "_Gallery_":  "גלריה",
+  "_Settings_": "הגדרות",
+
+  "_AnG_":      "עדי & גיל",
+
+  "_SettingsPage_VersionNumber_":      "מספר גרסא:",
+  "_SettingsPage_Language_":           "שפה:",
+  "_SettingsPage_ShowStatusBar_":      "הצג שורת מצב:",
+  "_SettingsPage_AllowNotifications_": "הצג הודעות:",
+
+  "_SettingsPage_PopUp_StatusBar_Header_": "שורת מצב",
+  "_SettingsPage_PopUp_StatusBar_Body_":   "הינך עומד לצבוע את שורת המצב כל עוד האפליקציה עובדת",
+
+  "_SettingsPage_PopUp_AllowNotification_Header_": "אישור הודעות",
+  "_SettingsPage_PopUp_AllowNotification_Body_":   "האם אתה מאשר לאפליקציה לשלוח push notification ?"
+
+}

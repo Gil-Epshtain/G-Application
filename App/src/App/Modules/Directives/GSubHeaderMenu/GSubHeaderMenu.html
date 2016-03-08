@@ -1,0 +1,23 @@
+<!-- *** G-HeaderMenu *** -->
+<div class="g-header-menu-container">
+
+    <div class="g-header-menu">
+
+        <div class="g-header-menu-item"
+             ng-repeat="item in items">
+
+            <!-- Menu Item Text -->
+            <div class="g-header-menu-item-text"
+                 ng-class="{ 'g-header-menu-item-text-active' : (item == selectedItem) }"
+                 ng-click="onClick_MenuItem(item);">
+                {{ item.text }}
+            </div>
+
+            <!-- Separation Line -->
+            <div class="g-header-menu-item-line"
+                 ng-if="($index != items.length - 1)">
+            </div>
+
+        </div>
+    </div>
+</div>

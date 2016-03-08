@@ -1,0 +1,40 @@
+/* ******** Application Style ******** */
+
+@import 'Fonts';
+@import 'Colors';
+@import 'Sizes';
+
+// Directions:
+@body-direction: rtl;
+@text-direction: right;
+@text-direction-negative: left;
+
+// Animation intervals:
+@animation-interval-side-menu: 1s;
+@animation-interval-checkbox-switch: .4s;
+
+body
+{
+  direction: @body-direction;
+  background-color: @color-background;
+  color: @color-text;
+}
+
+// Prevent user-agent default styles
+html
+{
+  height:100%;
+}
+body
+{
+  min-height:100%;
+  margin: 0;
+  overflow: hidden;
+}
+a
+{
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* ************* EOF ************* */

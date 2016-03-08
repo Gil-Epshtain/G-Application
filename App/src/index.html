@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>G-Application</title>
+
+    <!-- *** Meta For Mobile *** -->
+    <!-- * Prevent zoom * -->
+    <!--<meta name="viewport" content="user-scalable=0">-->
+    <meta name="viewport" content="width=device-width, user-scalable=0, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- * iOS StatusBar Color * -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- * Content-Security-Policy meta tag for 'cordova-plugin-whitelist' plugin * -->
+    <!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that
+        * CSS only from the same origin and inline styles,
+        * scripts only from the same origin and inline styles, and eval() -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+
+    <!-- *** Favicon ***-->
+    <link rel="icon" type="image/png" href="App/Assets/Images/icon.png">
+
+</head>
+<body ng-app="App">
+
+    <!-- *** Application Injection Point *** -->
+    <div ui-view></div>
+
+    <!-- *** Cordova ***-->
+    <!-- This will throw 404 in web debug -->
+    <script src="cordova.js"></script>
+
+    <!-- *** WebPack Bundle *** -->
+    <script src="script.js"></script>
+</body>
+</html>

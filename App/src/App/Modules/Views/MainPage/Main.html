@@ -1,0 +1,25 @@
+<!-- *** App Body *** -->
+<div class="app-container">
+
+    <!-- PopUp (Overlay) -->
+    <g-pop-up is-visible="mainCtrl.popUp.isVisible"
+              title="mainCtrl.popUp.title"
+              text="mainCtrl.popUp.text"
+              buttons="mainCtrl.popUp.buttons"
+              show-close-button="mainCtrl.popUp.showCloseButton"
+              on-close="mainCtrl.popUp.onClose()">
+    </g-pop-up>
+
+    <!-- Header placeholder -->
+    <div ui-view="header"></div>
+
+    <!-- SideMenu placeholder -->
+    <div ui-view="sideMenu"></div>
+
+    <!-- Content placeholder -->
+    <div ui-view id="contentPlaceholder" class="content-placeholder"></div>
+
+    <!-- Footer placeholder -->
+    <!--<div ui-view="footer"></div>-->
+
+</div>

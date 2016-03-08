@@ -16,7 +16,7 @@
     <!-- This policy allows everything (eg CSS, AJAX, object, frame, media, etc) except that
         * CSS only from the same origin and inline styles,
         * scripts only from the same origin and inline styles, and eval() -->
-    <!--<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">-->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
 
     <!-- *** Favicon ***-->
     <link rel="icon" type="image/png" href="App/Assets/Images/icon.png">
@@ -32,6 +32,6 @@
     <script src="cordova.js"></script>
 
     <!-- *** WebPack Bundle *** -->
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
