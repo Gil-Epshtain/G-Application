@@ -63,8 +63,6 @@ export default function(ngModule)
             isDeviceReadyEventFire = true;
 
             console.log("NativeService: DeviceReady!");
-
-            nativeService.Cordova.Plugins.StatusBar.SetColor('#BE1912');
         });
 
         $timeout(() =>

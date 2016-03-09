@@ -5,7 +5,7 @@
 author: Gil Epshtain
 email: gil_epshtain@yahoo.com
 
-version: v1.0
+version: v0.0.1
 license: MIT
 
 Please send my your comments :-)

@@ -153,10 +153,9 @@ export default function(ngModule)
         {
             settingsCtrl.versionNumber = mainCtrl.AppData.AppVersion;
 
-            settingsCtrl.dropDownLanguages_SelectedItem = Utils.Search(
-                                                                    settingsCtrl.dropDownLanguages_Items,
-                                                                    mainCtrl.AppData.getAppLanguage(),
-                                                                    'id');
+            settingsCtrl.dropDownLanguages_SelectedItem = Utils.Search(settingsCtrl.dropDownLanguages_Items,
+                                                                       mainCtrl.AppData.getAppLocalCode(),
+                                                                       'id');
         });
     }
 };

@@ -20,24 +20,38 @@ export default function(ngModule)
     {
         console.log("AppDataService: Initializing...");
 
-        let appData = {};
-
-        // App Language and Strings
-        appData.Strings = {};
-        appData.AppImages = PhotosService.AppImages;
-        appData.NativeService = NativeService;
-
-        appData.AppVersion = "v0.0.0.1";
-
-        appData.ApplicationHeader = "";
-
-        // Side Menu
-        appData.isSideMenuOpen = false;
-        appData.SideMenuItems = sideMenuItems;
-
         let deferredAppDataLoaded = $q.defer();
 
-        appData.getAppLanguage = function()
+        let appData =
+        {
+            AppVersion, "v0.0.1",
+
+            Strings: {},
+            AppImages: PhotosService.AppImages,
+
+            ApplicationHeader: "",
+            isSideMenuOpen: false,
+            SideMenuItems: sideMenuItems,
+
+            getAppLocalCode,
+            setAppLanguage
+        };
+
+        //---------------------------------------------------------//
+        // On AppData Ready
+
+        if (localStorage.isStatusBarPainted)
+        {
+            NativeService.Cordova.Plugins.StatusBar.SetColor('#BE1912');
+        }
+
+        // Init application languages
+        appData.setAppLanguage(getAppLocalCode());
+
+        //---------------------------------------------------------//
+        // AppData functions
+
+        function getAppLocalCode()
         {
             // Load app language from localStorage or use the default one
             const defaultLocalCode = 'he-IL'; // 'en-US';
@@ -45,9 +59,9 @@ export default function(ngModule)
             let localCode = localStorage.localCode ? localStorage.localCode : defaultLocalCode;
 
             return localCode;
-        };
+        }
 
-        appData.setAppLanguage = function(localCode)
+        function setAppLanguage(localCode)
         {
             console.log(`AppDataService: Changing app language - ${ localCode }`);
 
@@ -58,15 +72,18 @@ export default function(ngModule)
                 localStorage.localCode = localCode;
                 appData.Strings = language.strings;
 
-                initSideMenu();
+                resetSideMenu();
             }
             else
             {
                 console.warn(`AppDataService: Error getting Language Strings, language '${ localCode }' not found`);
             }
-        };
+        }
 
-        function initSideMenu()
+        //---------------------------------------------------------//
+        // Private
+
+        function resetSideMenu()
         {
             console.log("AppDataService: Refreshing SideMenu");
 
@@ -102,9 +119,6 @@ export default function(ngModule)
 
             deferredAppDataLoaded.resolve();
         }
-
-        // Init application languages
-        appData.setAppLanguage(appData.getAppLanguage());
 
         return { AppData: appData, onDataLoaded: deferredAppDataLoaded.promise };
     }
