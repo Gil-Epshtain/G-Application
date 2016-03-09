@@ -2,6 +2,8 @@
 
 'use strict';
 
+import appIndexFile from './../index.html';
+
 // Load Libraries
 import 'angular';
 import 'angular-ui-router';

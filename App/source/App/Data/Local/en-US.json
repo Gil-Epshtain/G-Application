@@ -15,11 +15,11 @@
 
   "_SettingsPage_VersionNumber_":      "Version Number:",
   "_SettingsPage_Language_":           "Language:",
-  "_SettingsPage_ShowStatusBar_":      "Show Status Bar:",
+  "_SettingsPage_ShowStatusBar_":      "Paint Status Bar:",
   "_SettingsPage_AllowNotifications_": "Show Notifications:",
 
   "_SettingsPage_PopUp_StatusBar_Header_": "Status Bar",
-  "_SettingsPage_PopUp_StatusBar_Body_":   "You are about to color the status bar while the application is working",
+  "_SettingsPage_PopUp_StatusBar_Body_":   "You are about to paint the status bar while the application is working",
 
   "_SettingsPage_PopUp_AllowNotification_Header_": "Notifications",
   "_SettingsPage_PopUp_AllowNotification_Body_":   "Do you allow the application to send push notifications?"

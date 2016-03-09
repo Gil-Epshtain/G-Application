@@ -7,17 +7,79 @@ export default function(ngModule)
     ngModule
         .factory("NativeService",
         [
+            '$timeout',
             nativeServiceFunc
         ]);
 
-    function nativeServiceFunc()
+    function nativeServiceFunc($timeout)
     {
         console.log("NativeService: Initializing...");
 
-        let nativeService = {};
+        let nativeService =
+        {
+            //  *** Platform (from 'navigator.userAgent') *** //
+            Platform:
+            {
+                getPlatform,
+                isAndroid,
+                isIOS,
+                isMobile,
+                isDesktop
+            },
+            // *** Cordova *** //
+            Cordova:
+            {
+                isReady: isCordovaReady,
 
-        //  *** Platform (from 'navigator.userAgent') ***
-        nativeService.getPlatform = function()
+                // *** Cordova Plugins ***
+                Plugins:
+                {
+                    // *** Plugin: SplashScreen 'cordova-plugin-splashscreen' *** //
+                    SplashScreen:
+                    {
+                        Toggle: splashScreenToggle,
+                        Hide:   splashScreenHide,
+                        Show:   splashScreenShow
+                    },
+                    // *** Plugin: StatusBar 'cordova-plugin-statusbar' *** //
+                    StatusBar:
+                    {
+                        SetColor:  statusBarSetColor,
+                        Toggle:    statusBarToggle,
+                        Hide:      statusBarHide,
+                        Show:      statusBarShow,
+                        isVisible: statusBarIsVisible
+                    }
+                }
+            }
+        };
+
+        //---------------------------------------------------------//
+        // On DeviceReady
+
+        let isDeviceReadyEventFire = false;
+        document.addEventListener('deviceready', ()=>
+        {
+            isDeviceReadyEventFire = true;
+
+            console.log("NativeService: DeviceReady!");
+
+            nativeService.Cordova.Plugins.StatusBar.SetColor('#BE1912');
+        });
+
+        $timeout(() =>
+        {
+            if (!isDeviceReadyEventFire)
+            {
+                console.warn("NativeService: DeviceReady event didn't fire after 5sec");
+                getPlatform();
+            }
+        }, 5000);
+
+        //---------------------------------------------------------//
+        // Platform
+
+        function getPlatform()
         {
             let platform;
             const userAgent = navigator.userAgent;
@@ -54,39 +116,40 @@ export default function(ngModule)
             console.log(`NativeService: Platform: ${ platform }`);
 
             return platform;
-        };
+        }
 
-        nativeService.isAndroid = function()
+        function isAndroid()
         {
-            return (nativeService.getPlatform() == 'Android');
-        };
+            return (getPlatform() == 'Android');
+        }
 
-        nativeService.isIOS = function()
+        function isIOS()
         {
-            return (nativeService.getPlatform() == 'iOS');
-        };
+            return (getPlatform() == 'iOS');
+        }
 
-        nativeService.isMobile = function()
+        function isMobile()
         {
-            const platform = nativeService.getPlatform();
+            let platform = getPlatform();
 
             return ((platform == 'Android') ||
                     (platform == 'Nokia')   ||
                     (platform == 'iOS'));
-        };
+        }
 
-        nativeService.isDesktop = function()
+        function isDesktop()
         {
-            const platform = nativeService.getPlatform();
+            let platform = getPlatform();
 
             return ((platform == 'Windows') ||
                     (platform == 'OSX')     ||
                     (platform == 'Linux'));
-        };
+        }
 
-        // *** Cordova ***
-        nativeService.Cordova = {};
-        nativeService.Cordova.isReady = function()
+        //---------------------------------------------------------//
+        // Cordova
+
+        function isCordovaReady()
         {
             let isReady;
 
@@ -100,20 +163,17 @@ export default function(ngModule)
             }
 
             return isReady
-        };
+        }
 
-        // *** Cordova Plugins ***
-        nativeService.Cordova.Plugins = {};
-
-        // *** Plugin: SplashScreen 'cordova-plugin-splashscreen' ***
-        nativeService.Cordova.Plugins.SplashScreen = {};
+        //---------------------------------------------------------//
+        // Cordova.Plugin.SplashScreen
 
         // SplashScreen: Show/Hide
-        nativeService.Cordova.Plugins.SplashScreen.Toggle = function(isShow)
+        function splashScreenToggle(isShow)
         {
             let showOrHideStr = isShow ? "Show" : "Hide";
 
-            if (nativeService.Cordova.isReady() && window.navigator.splashscreen)
+            if (isCordovaReady() && window.navigator.splashscreen)
             {
                 console.log(`NativeService: SplashScreen -> ${ showOrHideStr }`);
 
@@ -130,27 +190,27 @@ export default function(ngModule)
             {
                 console.warn(`NativeService: SplashScreen -> Error: Trying to ${ showOrHideStr } SplashScreen but Cordova isn't ready`);
             }
-        };
+        }
 
         // SplashScreen: Hide
-        nativeService.Cordova.Plugins.SplashScreen.Hide = function()
+        function splashScreenHide()
         {
-            nativeService.Cordova.Plugins.SplashScreen.Toggle(false);
-        };
+            splashScreenToggle(false);
+        }
 
         // SplashScreen: Show
-        nativeService.Cordova.Plugins.SplashScreen.Show = function()
+        function splashScreenShow()
         {
-            nativeService.Cordova.Plugins.SplashScreen.Toggle(true);
-        };
+            splashScreenToggle(true);
+        }
 
-        // *** Plugin: StatusBar 'cordova-plugin-statusbar' ***
-        nativeService.Cordova.Plugins.StatusBar = {};
+        //---------------------------------------------------------//
+        // Cordova.Plugin.StatusBar
 
         // StatusBar: Color
-        nativeService.Cordova.Plugins.StatusBar.SetColor = function(hexColor)
+        function statusBarSetColor(hexColor)
         {
-            if (nativeService.Cordova.isReady() && StatusBar)
+            if (isCordovaReady() && StatusBar)
             {
                 console.log(`NativeService: StatusBar -> Setting color: ${ hexColor }`);
 
@@ -160,10 +220,10 @@ export default function(ngModule)
             {
                 console.warn(`NativeService: StatusBar -> Error: Trying to Set status bar color ${ hexColor } but Cordova isn't ready`);
             }
-        };
+        }
 
         // StatusBar: Show/Hide
-        nativeService.Cordova.Plugins.StatusBar.Toggle = function(isShow)
+        function statusBarToggle(isShow)
         {
             let showOrHideStr = isShow ? "Show" : "Hide";
 
@@ -184,26 +244,26 @@ export default function(ngModule)
             {
                 console.warn(`NativeService: StatusBar -> Error: Trying to ${ showOrHideStr } StatusBar but Cordova isn't ready`);
             }
-        };
+        }
 
         // StatusBar: Hide
-        nativeService.Cordova.Plugins.StatusBar.Hide = function()
+        function statusBarHide()
         {
-            nativeService.Cordova.Plugins.StatusBar.Toggle(false);
-        };
+            statusBarToggle(false);
+        }
 
         // StatusBar: Show
-        nativeService.Cordova.Plugins.StatusBar.Show = function()
+        function statusBarShow()
         {
-            nativeService.Cordova.Plugins.StatusBar.Toggle(true);
-        };
+            statusBarToggle(true);
+        }
 
         // StatusBar: isVisible
-        nativeService.Cordova.Plugins.StatusBar.isVisible = function()
+        function statusBarIsVisible()
         {
             let isVisible = true;
 
-            if (nativeService.Cordova.isReady() && StatusBar)
+            if (isCordovaReady() && StatusBar)
             {
                 isVisible = StatusBar.isVisible;
             }
@@ -213,17 +273,9 @@ export default function(ngModule)
             }
 
             return isVisible;
-        };
+        }
 
-        // --- Cordova: Run Plugins ---
-        //(function invokePlugins()
-        //{
-        //    if (nativeService.Cordova.isReady())
-        //    {
-        //        nativeService.Cordova.Plugins.StatusBar.SetColor('#BE1912');
-        //        nativeService.Cordova.Plugins.SplashScreen.Hide();
-        //    }
-        //})();
+        //---------------------------------------------------------//
 
         return nativeService;
     }

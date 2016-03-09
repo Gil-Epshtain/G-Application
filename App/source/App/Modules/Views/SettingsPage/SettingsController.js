@@ -48,7 +48,6 @@ export default function(ngModule)
 
 
         // ------ Show/Hide StatusBar ------
-        const APP_COLOR = '#be1912';
         settingsCtrl.switchStatusBar_isOn = !!localStorage.isStatusBarPainted;
         settingsCtrl.wasPopUpStatusBarShown = false;
         settingsCtrl.onClick_SwitchStatusBar = function(isChecked)
@@ -90,14 +89,17 @@ export default function(ngModule)
 
             function toggleStatusBarColor(isStatusBarPainted)
             {
+                const APP_COLOR_ACTIVE  = '#BE1912'; // red
+                const APP_COLOR_DEFAULT = '#2F2E34'; // grey (see config.xml)
+
                 if (isStatusBarPainted)
                 {
-                    NativeService.Cordova.Plugins.StatusBar.SetColor(APP_COLOR);
+                    NativeService.Cordova.Plugins.StatusBar.SetColor(APP_COLOR_ACTIVE);
                     localStorage.isStatusBarPainted = true;
                 }
                 else
                 {
-                    NativeService.Cordova.Plugins.StatusBar.SetColor('#000000');
+                    NativeService.Cordova.Plugins.StatusBar.SetColor(APP_COLOR_DEFAULT);
                     localStorage.isStatusBarPainted = ""; // Parse string to boolean, for localStorage
                 }
             }

@@ -8,8 +8,8 @@
   "scripts": {
     "start": "node node_modules/.bin/webpack-dev-server --content-base source",
     "serv": "node node_modules/.bin/webpack-dev-server --content-base source",
-    "dev": "node node_modules/.bin/webpack",
-    "prod": "NODE_ENV=production node node_modules/.bin/webpack -p"
+    "dev": "node node_modules/.bin/webpack && cp source/index.html www/index.html",
+    "prod": "NODE_ENV=production node node_modules/.bin/webpack -p && cp source/index.html www/index.html"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",

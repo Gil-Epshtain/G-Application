@@ -9,19 +9,23 @@ export default function(ngModule)
     ngModule
         .service("AppDataService",
         [
+            'NativeService',
             'LanguagesService',
             'PhotosService',
             '$q',
             appDataFunc
         ]);
 
-    function appDataFunc(LanguagesService, PhotosService, $q)
+    function appDataFunc(NativeService, LanguagesService, PhotosService, $q)
     {
         console.log("AppDataService: Initializing...");
 
         let appData = {};
 
-        let deferredAppDataLoaded = $q.defer();
+        // App Language and Strings
+        appData.Strings = {};
+        appData.AppImages = PhotosService.AppImages;
+        appData.NativeService = NativeService;
 
         appData.AppVersion = "v0.0.0.1";
 
@@ -31,10 +35,7 @@ export default function(ngModule)
         appData.isSideMenuOpen = false;
         appData.SideMenuItems = sideMenuItems;
 
-        // App Language and Strings
-        appData.Strings = {};
-
-        appData.AppImages = PhotosService.AppImages;
+        let deferredAppDataLoaded = $q.defer();
 
         appData.getAppLanguage = function()
         {
