@@ -11,7 +11,7 @@
 module.exports =
 {
     // Working Directory:
-    context: __dirname + '/src',
+    context: __dirname + '/source',
 
     // App Entry Point:
     entry: './App/App.js',
@@ -27,7 +27,7 @@ module.exports =
     // enable loading modules relatively
     resolve:
     {
-        root: [__dirname + "/src"]
+        root: [__dirname + "/source"]
     },
 
     module:
@@ -72,7 +72,18 @@ module.exports =
                 test: /\.woff(2)?$/,
                 exclude: /node_modules/,
                 loader: "url?limit=10000&minetype=application/font-woff"
+            },
+            // Images
+            {
+                test: /\.(jpe?g|png|gif|svg)$/i,
+                exclude: /node_modules/,
+                loaders:
+                [
+                    'file?hash=sha512&digest=hex&name=[hash].[ext]',
+                    'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+                ]
             }
+
         ]
     },
 

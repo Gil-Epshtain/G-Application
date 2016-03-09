@@ -1,0 +1,38 @@
+<!-- *** G-Gallery *** -->
+<div id="gGallery"
+     class="g-gallery-container">
+
+    <!-- Gallery Title -->
+    <div class="g-gallery-title">
+        {{ galleryTitle }}
+    </div>
+
+    <!-- Gallery Items -->
+    <div class="g-gallery-items-container">
+
+        <div class="g-gallery-item"
+             ng-repeat="galleryItem in galleryItems"
+             ng-click="onClick_GalleryItem(galleryItem);">
+
+            <!-- Photo -->
+            <div class="g-gallery-item-photo">
+                <img class="g-gallery-item-photo-img"
+                     ng-src="{{ galleryItem.image.thumbnail }}" />
+            </div>
+
+            <!-- Text -->
+            <div class="g-gallery-item-text">
+                {{ galleryItem.text }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Top Top -->
+    <div class="g-gallery-back-to-top"
+         ng-if="isShowBackToTopButton"
+         ng-click="onClick_BackToTop()"
+         ng-class="{ 'g-gallery-back-to-top-press': isShowBackToTopButtonPressStyle }">
+        <img class="g-gallery-back-to-top-img"
+             ng-src="{{ imgIconArrowUpWhite }}"/>
+    </div>
+</div>

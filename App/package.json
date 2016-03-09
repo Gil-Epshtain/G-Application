@@ -5,21 +5,20 @@
   "author": "Gil Epshtain",
   "license": "MIT",
   "main": "index.js",
-  "scripts":
-  {
-    "start": "node node_modules/.bin/webpack-dev-server --content-base www",
-    "serv":   "node node_modules/.bin/webpack-dev-server --content-base www",
+  "scripts": {
+    "start": "node node_modules/.bin/webpack-dev-server --content-base source",
+    "serv": "node node_modules/.bin/webpack-dev-server --content-base source",
     "dev": "node node_modules/.bin/webpack",
     "prod": "NODE_ENV=production node node_modules/.bin/webpack -p"
   },
-  "devDependencies":
-  {
+  "devDependencies": {
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
     "babel-preset-es2015": "^6.5.0",
     "cordova": "^6.0.0",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
+    "image-webpack-loader": "^1.6.3",
     "json-loader": "^0.5.4",
     "less": "^2.6.0",
     "less-loader": "^2.2.2",
@@ -30,8 +29,7 @@
     "webpack-cordova-plugin": "^0.1.6",
     "webpack-dev-server": "^1.14.1"
   },
-  "dependencies":
-  {
+  "dependencies": {
     "angular": "^1.5.0",
     "angular-ui-router": "^0.2.18"
   }

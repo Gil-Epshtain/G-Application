@@ -7,7 +7,7 @@
     </description>
     
     <author email="gil_epshtain@yahoo.com"
-            href="https://il.linkedin.com/in/gil-epshtain-41134570">
+            href="https://github.com/Gil-Epshtain">
         Gil Epshtain
     </author>
     
@@ -42,28 +42,28 @@
         <allow-intent href="market:*" />
         
         <!-- * Icon * -->
-        <icon src="res/android/icon/ldpi.png"    density="ldpi"    /> <!-- LDPI    - 36  x 36  --> 
-        <icon src="res/android/icon/mdpi.png"    density="mdpi"    /> <!-- MDPI    - 48  x 48  -->
-        <icon src="res/android/icon/hdpi.png"    density="hdpi"    /> <!-- HDPI    - 72  x 72  -->
-        <icon src="res/android/icon/xhdpi.png"   density="xhdpi"   /> <!-- XHDPI   - 96  x 96  -->
-        <icon src="res/android/icon/xxhdpi.png"  density="xxhdpi"  /> <!-- XXHDPI  - 144 x 144 -->
-        <icon src="res/android/icon/xxxhdpi.png" density="xxxhdpi" /> <!-- XXXHDPI - 192 x 192 -->
+        <icon src="resources/android/icon/ldpi.png"    density="ldpi"    /> <!-- LDPI    - 36  x 36  --> 
+        <icon src="resources/android/icon/mdpi.png"    density="mdpi"    /> <!-- MDPI    - 48  x 48  -->
+        <icon src="resources/android/icon/hdpi.png"    density="hdpi"    /> <!-- HDPI    - 72  x 72  -->
+        <icon src="resources/android/icon/xhdpi.png"   density="xhdpi"   /> <!-- XHDPI   - 96  x 96  -->
+        <icon src="resources/android/icon/xxhdpi.png"  density="xxhdpi"  /> <!-- XXHDPI  - 144 x 144 -->
+        <icon src="resources/android/icon/xxxhdpi.png" density="xxxhdpi" /> <!-- XXXHDPI - 192 x 192 -->
         
         <!-- * Splash * -->
         <!-- Landscape -->
-        <splash src="res/android/splash/land-ldpi.png"    density="land-ldpi"    /> <!-- LDPI    - 320  x 200  -->
-        <splash src="res/android/splash/land-mdpi.png"    density="land-mdpi"    /> <!-- MDPI    - 480  x 320  -->
-        <splash src="res/android/splash/land-hdpi.png"    density="land-hdpi"    /> <!-- HDPI    - 800  x 480  -->
-        <splash src="res/android/splash/land-xhdpi.png"   density="land-xhdpi"   /> <!-- XHDPI   - 1280 x 720  -->
-        <splash src="res/android/splash/land-xxhdpi.png"  density="land-xxhdpi"  /> <!-- XXHDPI  - 1600 x 960  -->
-        <splash src="res/android/splash/land-xxxhdpi.png" density="land-xxxhdpi" /> <!-- XXXHDPI - 1920 x 1280 -->
+        <splash src="resources/android/splash/land-ldpi.png"    density="land-ldpi"    /> <!-- LDPI    - 320  x 200  -->
+        <splash src="resources/android/splash/land-mdpi.png"    density="land-mdpi"    /> <!-- MDPI    - 480  x 320  -->
+        <splash src="resources/android/splash/land-hdpi.png"    density="land-hdpi"    /> <!-- HDPI    - 800  x 480  -->
+        <splash src="resources/android/splash/land-xhdpi.png"   density="land-xhdpi"   /> <!-- XHDPI   - 1280 x 720  -->
+        <splash src="resources/android/splash/land-xxhdpi.png"  density="land-xxhdpi"  /> <!-- XXHDPI  - 1600 x 960  -->
+        <splash src="resources/android/splash/land-xxxhdpi.png" density="land-xxxhdpi" /> <!-- XXXHDPI - 1920 x 1280 -->
         <!-- Portrait -->
-        <splash src="res/android/splash/port-ldpi.png"    density="port-ldpi"    /> <!-- LDPI    - 200  x 320  -->
-        <splash src="res/android/splash/port-mdpi.png"    density="port-mdpi"    /> <!-- MDPI    - 320  x 480  -->
-        <splash src="res/android/splash/port-hdpi.png"    density="port-hdpi"    /> <!-- HDPI    - 480  x 800  -->
-        <splash src="res/android/splash/port-xhdpi.png"   density="port-xhdpi"   /> <!-- XHDPI   - 720  x 1280 -->
-        <splash src="res/android/splash/port-xxhdpi.png"  density="port-xxhdpi"  /> <!-- XXHDPI  - 960  x 1600 -->
-        <splash src="res/android/splash/port-xxxhdpi.png" density="port-xxxhdpi" /> <!-- XXXHDPI - 1280 x 1920 -->
+        <splash src="resources/android/splash/port-ldpi.png"    density="port-ldpi"    /> <!-- LDPI    - 200  x 320  -->
+        <splash src="resources/android/splash/port-mdpi.png"    density="port-mdpi"    /> <!-- MDPI    - 320  x 480  -->
+        <splash src="resources/android/splash/port-hdpi.png"    density="port-hdpi"    /> <!-- HDPI    - 480  x 800  -->
+        <splash src="resources/android/splash/port-xhdpi.png"   density="port-xhdpi"   /> <!-- XHDPI   - 720  x 1280 -->
+        <splash src="resources/android/splash/port-xxhdpi.png"  density="port-xxhdpi"  /> <!-- XXHDPI  - 960  x 1600 -->
+        <splash src="resources/android/splash/port-xxxhdpi.png" density="port-xxxhdpi" /> <!-- XXXHDPI - 1280 x 1920 -->
     </platform>
     
     <!-- *** iOS *** -->
@@ -74,41 +74,41 @@
         <!-- * Icon * -->
         <!-- iOS 8.0+ -->
         <!-- iPhone 6 Plus  -->
-        <icon src="res/ios/icon/icon-60@3x.png"    width="180" height="180" />
+        <icon src="resources/ios/icon/icon-60@3x.png"    width="180" height="180" />
         <!-- iOS 7.0+ -->
         <!-- iPhone / iPod Touch  -->
-        <icon src="res/ios/icon/icon-60.png"       width="60"  height="60"  />
-        <icon src="res/ios/icon/icon-60@2x.png"    width="120" height="120" />
+        <icon src="resources/ios/icon/icon-60.png"       width="60"  height="60"  />
+        <icon src="resources/ios/icon/icon-60@2x.png"    width="120" height="120" />
         <!-- iPad -->
-        <icon src="res/ios/icon/icon-76.png"       width="76"  height="76"  />
-        <icon src="res/ios/icon/icon-76@2x.png"    width="152" height="152" />
+        <icon src="resources/ios/icon/icon-76.png"       width="76"  height="76"  />
+        <icon src="resources/ios/icon/icon-76@2x.png"    width="152" height="152" />
         <!-- iOS 6.1 -->
         <!-- Spotlight Icon -->
-        <icon src="res/ios/icon/icon-40.png"       width="40"  height="40"  />
-        <icon src="res/ios/icon/icon-40@2x.png"    width="80"  height="80"  />
+        <icon src="resources/ios/icon/icon-40.png"       width="40"  height="40"  />
+        <icon src="resources/ios/icon/icon-40@2x.png"    width="80"  height="80"  />
         <!-- iPhone / iPod Touch -->
-        <icon src="res/ios/icon/icon.png"          width="57"  height="57"  />
-        <icon src="res/ios/icon/icon@2x.png"       width="114" height="114" />
+        <icon src="resources/ios/icon/icon.png"          width="57"  height="57"  />
+        <icon src="resources/ios/icon/icon@2x.png"       width="114" height="114" />
         <!-- iPad -->
-        <icon src="res/ios/icon/icon-72.png"       width="72"  height="72"  />
-        <icon src="res/ios/icon/icon-72@2x.png"    width="144" height="144" />
+        <icon src="resources/ios/icon/icon-72.png"       width="72"  height="72"  />
+        <icon src="resources/ios/icon/icon-72@2x.png"    width="144" height="144" />
         <!-- iPhone Spotlight and Settings Icon -->
-        <icon src="res/ios/icon/icon-small.png"    width="29"  height="29"  />
-        <icon src="res/ios/icon/icon-small@2x.png" width="58"  height="58"  />
+        <icon src="resources/ios/icon/icon-small.png"    width="29"  height="29"  />
+        <icon src="resources/ios/icon/icon-small@2x.png" width="58"  height="58"  />
         <!-- iPad Spotlight and Settings Icon -->
-        <icon src="res/ios/icon/icon-50.png"       width="50"  height="50"  />
-        <icon src="res/ios/icon/icon-50@2x.png"    width="100" height="100" />
+        <icon src="resources/ios/icon/icon-50.png"       width="50"  height="50"  />
+        <icon src="resources/ios/icon/icon-50@2x.png"    width="100" height="100" />
         
         <!-- * Splash * -->
-        <splash src="res/ios/splash/Default~iphone.png"            width="320"  height="480"  />
-        <splash src="res/ios/splash/Default@2x~iphone.png"         width="640"  height="960"  />
-        <splash src="res/ios/splash/Default-Portrait~ipad.png"     width="768"  height="1024" />
-        <splash src="res/ios/splash/Default-Portrait@2x~ipad.png"  width="1536" height="2048" />
-        <splash src="res/ios/splash/Default-Landscape~ipad.png"    width="1024" height="768"  />
-        <splash src="res/ios/splash/Default-Landscape@2x~ipad.png" width="2048" height="1536" />
-        <splash src="res/ios/splash/Default-568h@2x~iphone.png"    width="640"  height="1136" />
-        <splash src="res/ios/splash/Default-667h.png"              width="750"  height="1334" />
-        <splash src="res/ios/splash/Default-736h.png"              width="1242" height="2208" />
-        <splash src="res/ios/splash/Default-Landscape-736h.png"    width="2208" height="1242" />
+        <splash src="resources/ios/splash/Default~iphone.png"            width="320"  height="480"  />
+        <splash src="resources/ios/splash/Default@2x~iphone.png"         width="640"  height="960"  />
+        <splash src="resources/ios/splash/Default-Portrait~ipad.png"     width="768"  height="1024" />
+        <splash src="resources/ios/splash/Default-Portrait@2x~ipad.png"  width="1536" height="2048" />
+        <splash src="resources/ios/splash/Default-Landscape~ipad.png"    width="1024" height="768"  />
+        <splash src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" height="1536" />
+        <splash src="resources/ios/splash/Default-568h@2x~iphone.png"    width="640"  height="1136" />
+        <splash src="resources/ios/splash/Default-667h.png"              width="750"  height="1334" />
+        <splash src="resources/ios/splash/Default-736h.png"              width="1242" height="2208" />
+        <splash src="resources/ios/splash/Default-Landscape-736h.png"    width="2208" height="1242" />
     </platform>
 </widget>

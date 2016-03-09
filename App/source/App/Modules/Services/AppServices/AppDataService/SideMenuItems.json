@@ -1,0 +1,35 @@
+[
+  {
+    "id": "/homePage",
+    "text": "",
+    "pageTitle": "",
+    "icon":
+    {
+      "active": "",
+      "inactive": ""
+    },
+    "state": "body.homePage"
+  },
+  {
+    "id": "/gallery",
+    "text": "",
+    "pageTitle": "",
+    "icon":
+    {
+      "active": "",
+      "inactive": ""
+    },
+    "state": "body.gallery"
+  },
+  {
+    "id": "/settings",
+    "text": "",
+    "pageTitle": "",
+    "icon":
+    {
+      "active": "",
+      "inactive": ""
+    },
+    "state": "body.settings"
+  }
+]
