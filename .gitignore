@@ -42,7 +42,7 @@ App/node_modules/
 
 # WebPack Deploy #
 #####################
-App/dist/
+App/www/
 
 # Cordova (Platforms and Plugins)      #
 ########################################
