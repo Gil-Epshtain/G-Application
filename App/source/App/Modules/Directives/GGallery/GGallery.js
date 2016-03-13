@@ -40,6 +40,7 @@ export default function(ngModule)
         function linkFunc(scope, element, attrs)
         {
             scope.imgIconArrowUpWhite = PhotosService.AppImages.imgIconArrowUpWhite;
+            scope.imgSpinner =          PhotosService.AppImages.imgAnimatedSpinner;
 
             // OnChange: Gallery Items (new Gallery)
             scope.$watch('galleryItems', function(newValue, oldValue)

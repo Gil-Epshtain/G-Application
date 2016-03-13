@@ -4,18 +4,40 @@
      ng-click="onClick_PhotoPreviewDarkBackground()">
 
     <div class="g-photo-preview-container">
+
         <div class="g-photo-preview">
 
+            <!-- Use '$event.stopPropagation()' so click on photo want trigger click on background -->
+
+            <!-- Photo -->
             <img ng-src="{{ imgSrc }}"
                  ng-click="onClick_PhotoPreview(); $event.stopPropagation();"
                  class="g-photo-preview-img"/>
 
             <!-- Close Button -->
-            <div class="g-photo-preview-close-button"
-                 ng-click="onClick_ClosePreviewButton()">
+            <div class="g-photo-preview-button g-photo-preview-button-close"
+                 ng-click="onClick_ClosePreviewButton(); $event.stopPropagation();">
 
                 <img ng-src="{{ imgIconDeleteWhite }}"
-                     class="g-photo-preview-close-button-img"/>
+                     class="g-photo-preview-button-close-img"/>
+            </div>
+
+            <!-- Left Button -->
+            <div class="g-photo-preview-button g-photo-preview-button-arrow g-photo-preview-button-arrow-left"
+                 ng-click="onClick_LeftButton(); $event.stopPropagation();"
+                 ng-show="isShowLeftButton">
+
+                <img ng-src="{{ imgIconArrowLeftWhite }}"
+                     class="g-photo-preview-button-arrow-img g-photo-preview-button-arrow-left-img"/>
+            </div>
+
+            <!-- Right Button -->
+            <div class="g-photo-preview-button g-photo-preview-button-arrow g-photo-preview-button-arrow-right"
+                 ng-click="onClick_RightButton(); $event.stopPropagation();"
+                 ng-show="isShowRightButton">
+
+                <img ng-src="{{ imgIconArrowRightWhite }}"
+                     class="g-photo-preview-button-arrow-img g-photo-preview-button-arrow-right-img"/>
             </div>
 
         </div>

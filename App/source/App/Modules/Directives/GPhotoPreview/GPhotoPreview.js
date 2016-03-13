@@ -26,7 +26,13 @@ export default function(ngModule)
             scope:
             {
                 isVisible: '=',
-                imgSrc: '='
+                imgSrc: '=',
+
+                isShowLeftButton: '=',
+                onClickLeftButton: '&',
+
+                isShowRightButton: '=',
+                onClickRightButton: '&'
             }
 
             // -> '@' String: (with expression {{ }} ), data stored in attrs
@@ -36,8 +42,11 @@ export default function(ngModule)
 
         function linkFunc(scope, element, attrs)
         {
-            scope.imgIconDeleteWhite = PhotosService.AppImages.imgIconDeleteWhite;
+            scope.imgIconDeleteWhite     = PhotosService.AppImages.imgIconDeleteWhite;
+            scope.imgIconArrowLeftWhite  = PhotosService.AppImages.imgIconArrowLeftWhite;
+            scope.imgIconArrowRightWhite = PhotosService.AppImages.imgIconArrowRightWhite;
 
+            // OnClick: Photo
             scope.onClick_PhotoPreview = function()
             {
                 console.log("G-PhotoPreview: Click -> Photo");
@@ -45,26 +54,46 @@ export default function(ngModule)
                 // Do nothing, just for prevent close view due to click on container div
             };
 
+            // OnClick: Dark Background
             scope.onClick_PhotoPreviewDarkBackground = function()
             {
                 console.log("G-PhotoPreview: Click -> Dark Background");
 
-                scope.onClick_HidePhotoPreview();
+                closePhotoPreview();
             };
 
+            // OnClick: Close
             scope.onClick_ClosePreviewButton = function()
             {
                 console.log("G-PhotoPreview: Click -> Close");
 
-                scope.onClick_HidePhotoPreview();
+                closePhotoPreview();
             };
 
-            scope.onClick_HidePhotoPreview = function()
+            // OnClick: Left
+            scope.onClick_LeftButton = function()
+            {
+                console.log("G-PhotoPreview: Click -> Left");
+
+                // Invoke Callback
+                scope.onClickLeftButton();
+            };
+
+            // OnClick: Right
+            scope.onClick_RightButton = function()
+            {
+                console.log("G-PhotoPreview: Click -> Right");
+
+                // Invoke Callback
+                scope.onClickRightButton();
+            };
+
+            function closePhotoPreview()
             {
                 console.log("G-PhotoPreview: Closing");
 
                 scope.isVisible = false;
-            };
+            }
         }
 
         return gPhotoPreview;

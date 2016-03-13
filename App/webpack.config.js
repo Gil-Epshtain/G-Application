@@ -62,9 +62,9 @@ module.exports =
                 exclude: /node_modules/,
                 loader: "json"
             },
-            // Fonts
+            // Fonts //
             {
-                test: /\.(ttf|eot|svg|otf)$/,
+                test: /\.(ttf|eot|otf)$/,
                 exclude: /node_modules/,
                 loader: "file"
             },

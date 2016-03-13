@@ -2,8 +2,12 @@
 <div class="gallery-page-container">
 
     <!-- Photo Preview (PopUp)  -->
-    <g-photo-preview is-visible="galleryCtrl.isPhotoPreviewVisible"
-                     img-src="galleryCtrl.photoPreviewImage">
+    <g-photo-preview is-visible="galleryCtrl.photoPreview.isVisible"
+                     img-src="galleryCtrl.photoPreview.imgUrl"
+                     is-show-left-button="galleryCtrl.photoPreview.isButtonNextVisible"
+                     is-show-right-button="galleryCtrl.photoPreview.isButtonBackVisible"
+                     on-click-left-button="galleryCtrl.onClick_PhotoPreviewNext()"
+                     on-click-right-button="galleryCtrl.onClick_PhotoPreviewBack()" >
     </g-photo-preview>
 
     <!-- Sub Header -->

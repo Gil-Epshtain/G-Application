@@ -6,7 +6,7 @@
 {
   display: none;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.55);
+  background-color: @color-photo-preview-background-dark-transparent;
   width: auto;
   height: auto;
   top: 0;
@@ -20,9 +20,9 @@
     position: absolute;
     display: block;
     margin: 0 auto;
-    max-width: 80%;
+    width: 80%;
+    height: 80%;
     top: 10%;
-    bottom: 10%;
     left: 0;
     right: 0;
     z-index: 6;
@@ -33,10 +33,11 @@
   {
     position: relative;
     display: inline-block;
-    height: 100%;
-    width: auto;
+    max-height: 100%;
     max-width: 100%;
     margin: 0 auto;
+
+
 
     .g-photo-preview-img
     {
@@ -45,27 +46,70 @@
       max-width: 100%;
       max-height: 100%;
 
-      -webkit-box-shadow: 15px 15px 15px 0px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 15px 15px 15px 0px rgba(0, 0, 0, 0.75);
-      box-shadow: 15px 15px 15px 0px rgba(0, 0, 0, 0.75);
-      border: 1px solid grey;
+      -webkit-box-shadow: @box-shadow-safari;
+      -moz-box-shadow:    @box-shadow-firefox;
+      box-shadow:         @box-shadow-standard;
+      border: 1px solid   @color-photo-preview-border;
     }
 
-    .g-photo-preview-close-button
+    // -- Buttons --
+    .g-photo-preview-button
     {
       position: absolute;
-      z-index: 7;
-      width: 22px;
-      height: 22px;
-      top: -10px;
-      left: -10px;
+    }
 
-      .g-photo-preview-close-button-img
+    // Close Button
+    .g-photo-preview-button-close
+    {
+      z-index: 8;
+      width: 50px;  // Use 50x50px are for click-able area
+      height: 50px;
+      top: -25px;
+      left: -25px;
+
+      .g-photo-preview-button-close-img
       {
         position: relative;
+        width: 22px;
+        height: 22px;
+        top: 14px;
+      }
+    }
+
+    // Arrows Button
+    .g-photo-preview-button-arrow
+    {
+      z-index: 7;
+      width: 100px; // Use 100px of each edge as click-able area
+      height: 100%;
+      top: 0;
+
+      .g-photo-preview-button-arrow-img
+      {
         display: block;
-        width: 100%;
-        height: 100%;
+        position: relative;
+        top: 40%;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+      }
+    }
+    .g-photo-preview-button-arrow-left
+    {
+      left: -25px; // use 25px out of the photo for click-able area
+
+      .g-photo-preview-button-arrow-left-img
+      {
+        left: -30px;
+      }
+    }
+    .g-photo-preview-button-arrow-right
+    {
+      right: -25px;
+
+      .g-photo-preview-button-arrow-right-img
+      {
+        right: -30px;
       }
     }
   }

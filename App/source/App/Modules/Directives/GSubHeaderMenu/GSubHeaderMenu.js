@@ -10,10 +10,11 @@ export default function(ngModule)
     ngModule
         .directive('gSubHeaderMenu',
         [
+            'PhotosService',
             gHeaderMenuDirective
         ]);
 
-    function gHeaderMenuDirective()
+    function gHeaderMenuDirective(PhotosService)
     {
         console.log("G-HeaderMenu: Initializing...");
 
@@ -35,6 +36,9 @@ export default function(ngModule)
 
         function linkFunc(scope, element, attrs)
         {
+            scope.imgIconArrowLeftWhite  = PhotosService.AppImages.imgIconArrowLeftWhite;
+            scope.imgIconArrowRightWhite = PhotosService.AppImages.imgIconArrowRightWhite;
+
             scope.selectedItem = scope.items[0];
 
             // OnClick

@@ -1,26 +1,48 @@
-// Colors:
+// -- Colors: --
+
+// Black/ White
 @color-black: rgb(17, 17, 17);
 @color-white: rgb(255, 255, 255);
 
+// Grey
 @color-grey0: rgb(23, 24, 27);
 @color-grey1: rgb(47, 46, 52);
 @color-grey2: rgb(97, 90, 91);
 @color-grey3: rgb(135, 135, 135);
 @color-grey4: rgb(237, 237, 237);
 
+// Red
 @color-red0: rgb(36, 0, 0);
 @color-red1: rgb(120, 13, 7);
 @color-red2: rgb(190, 25, 18);
 @color-red3: rgb(235, 35, 24);
 @color-red4: rgb(243, 38, 27);
 
+// Transparent
+@color-transparent-dark1: rgba(0, 0, 0, 0.25);
+@color-transparent-dark2: rgba(0, 0, 0, 0.55);
+@color-transparent-dark3: rgba(0, 0, 0, 0.75);
+
+// Gradients
+// top to button grey
 @color-gradients-top-button-firefox:   -moz-linear-gradient(@color-black, @color-black, @color-black, @color-grey0, @color-grey1, @color-grey2);
 @color-gradients-top-button-safari: -webkit-linear-gradient(@color-black, @color-black, @color-black, @color-grey0, @color-grey1, @color-grey2);
 @color-gradients-top-button-standard:       linear-gradient(@color-black, @color-black, @color-black, @color-grey0, @color-grey1, @color-grey2);
 
+// left to right red
 @color-gradients-left-right-safari: -webkit-linear-gradient(left, @color-red2, @color-red0, @color-black, @color-black, @color-black, @color-red0, @color-red2);
 @color-gradients-left-right-firefox:  -moz-linear-gradient(right, @color-red2, @color-red0, @color-black, @color-black, @color-black, @color-red0, @color-red2);
 @color-gradients-left-right-standard:   linear-gradient(to right, @color-red2, @color-red0, @color-black, @color-black, @color-black, @color-red0, @color-red2);
+
+// left to right grey
+@color-gradients-left-right-grey-safari: -webkit-linear-gradient(left, @color-grey2, @color-grey0, @color-black, @color-black, @color-black, @color-grey0, @color-grey2);
+@color-gradients-left-right-grey-firefox:  -moz-linear-gradient(right, @color-grey2, @color-grey0, @color-black, @color-black, @color-black, @color-grey0, @color-grey2);
+@color-gradients-left-right-grey-standard:   linear-gradient(to right, @color-grey2, @color-grey0, @color-black, @color-black, @color-black, @color-grey0, @color-grey2);
+
+// Box Shadow
+@box-shadow-safari:   15px 15px 15px 0px @color-transparent-dark3;
+@box-shadow-firefox:  15px 15px 15px 0px @color-transparent-dark3;
+@box-shadow-standard: 15px 15px 15px 0px @color-transparent-dark3;
 
 @color-background: @color-black;
 @color-header:     @color-red2;
@@ -41,9 +63,9 @@
 @color-side-menu-line:        @color-press;
 
 // SubHeader
-@color-gradients-sub-header-safari: -webkit-linear-gradient(left, @color-grey2, @color-grey0, @color-black, @color-black, @color-black, @color-grey0, @color-grey2);
-@color-gradients-sub-header-firefox:  -moz-linear-gradient(right, @color-grey2, @color-grey0, @color-black, @color-black, @color-black, @color-grey0, @color-grey2);
-@color-gradients-sub-header-standard:   linear-gradient(to right, @color-grey2, @color-grey0, @color-black, @color-black, @color-black, @color-grey0, @color-grey2);
+@color-gradients-sub-header-safari:   @color-gradients-left-right-grey-safari;
+@color-gradients-sub-header-firefox:  @color-gradients-left-right-grey-firefox;
+@color-gradients-sub-header-standard: @color-gradients-left-right-grey-standard;
 @color-sub-header:              @color-grey0;
 @color-header-menu-item-active: @color-active;
 @color-header-menu-line:        @color-grey1;
@@ -52,32 +74,35 @@
 @color-text:         @color-white;
 @color-text-active:  @color-active;
 
-// PopUp:
+// G-PopUp:
 @color-popup-background: @color-background;
 @color-popup-header: @color-header;
 @color-popup-button: @color-header;
 @color-popup-border: @color-border;
 
-// Checkbox
+// G-Checkbox
 @color-checkbox-active:   @color-active;
 @color-checkbox-inactive: @color-white;
 
-// Switch
+// G-Switch
 @color-switch-border:   @color-black;
 @color-switch-active:   @color-active;
 @color-switch-inactive: @color-white;
 
-// DropDownList
+// G-DropDownList
 @color-drop-down-list-v-button:   @color-active;
 @color-drop-down-list-background: @color-black;
 @color-drop-down-list-line:       @color-grey1;
 @color-drop-down-list-item-press: @color-active;
 
-// Gallery
+// G-Gallery
 @color-gallery-item-background:   @color-red1;
 @color-gallery-back-to-top:       @color-black;
 @color-gallery-back-to-top-press: @color-active;
 
+// G-PhotoPreview
+@color-photo-preview-border: @color-grey2;
+@color-photo-preview-background-dark-transparent: @color-transparent-dark2;
 
 // Settings Page
 @color-separation-line: @color-grey1;

@@ -24,7 +24,7 @@ export default function(ngModule)
 
         let appData =
         {
-            AppVersion, "v0.0.1",
+            AppVersion: "v0.0.1",
 
             Strings: {},
             AppImages: PhotosService.AppImages,
@@ -44,6 +44,8 @@ export default function(ngModule)
         {
             NativeService.Cordova.Plugins.StatusBar.SetColor('#BE1912');
         }
+
+        NativeService.Cordova.Plugins.SplashScreen.Hide();
 
         // Init application languages
         appData.setAppLanguage(getAppLocalCode());
