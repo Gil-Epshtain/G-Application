@@ -23,13 +23,9 @@ import imgIconSettingsHexBE1912  from './../../../../Assets/Images/Icons/Setting
 
 // Images
 import imgImageHarts             from './../../../../Assets/Images/Images/Hearts.png';
-import imgImagePlaceholder       from './../../../../Assets/Images/Images/Placeholder.jpg';
-import imgImagePlaceholderLarge  from './../../../../Assets/Images/Images/Placeholder-Large.jpg';
 
 // Animated
 import imgAnimatedSpinner        from './../../../../Assets/Images/Animated/Spinner-white.svg';
-
-
 
 export default function(ngModule)
 {
@@ -65,8 +61,6 @@ export default function(ngModule)
 
                 // Images
                 imgImageHarts,
-                imgImagePlaceholder,
-                imgImagePlaceholderLarge,
 
                 // Animated
                 imgAnimatedSpinner
