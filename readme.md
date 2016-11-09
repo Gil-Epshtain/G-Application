@@ -17,22 +17,80 @@ G-Application uses a number of open source projects to work properly:
 
 ### Installation
 
-Run npm install to setup the node_modules:
+##### 1. Ajust the envirement for your OS - Windows/ Linux (OSX users folow the Linux instructions).
+This application support both Window and Linux OS, however due to changes in the file-system and in the terminal command, we need to make a few changes in the 'package.json' and in the 'webpack.config.js' files. 
+Alter these filese according the instructions in the 'OS Changes (Window vs Linux).txt' file.
 
+##### 2. Install node_modules
+Run npm install to setup the node_modules:
 ```sh
 $ npm i
 ```
 
-Run npm.. 
-(ToDo...)
+##### 3. Run dev-server
+Run npm start script to load webpack-dev-server:
+```sh
+$ npm start
+```
+
+##### 4. See dev-server output
+Open your web-browser at:
+```
+http://localhost:8080
+```
+
+### Deploy to Production
+Ones development is done, deploy the app to production, run:
+```sh
+npm run production
+```
+
+### Deploy to Mobile (Android/iOS)
+ToDo: Write instructions...
+
+### Valid Scripts
+##### 1. Run webpack dev-server - for development and debugging
+use **one** of these commands:
+```sh
+npm start
+```
+```sh
+npm run srv
+```
+```sh
+npm run server
+```
+
+##### 2. Run webpack - release development version (without minified/uglify)
+use **one** of these commands:
+```sh
+npm run dev
+```
+```sh
+npm run development
+```
+
+##### 3. Run webpack production - release production version (with minified/uglify and preparation for mobile version)
+use **one** of these commands:
+```sh
+npm run prd
+```
+```sh
+npm run production
+```
+
+##### 4. Clean - delete to dist folder ('www' directory) - may be necessary before deploying to production
+use **one** of these commands:
+```sh
+npm run cln
+```
+```sh
+npm run clean
+```
 
 ### Development
 
 Want to contribute? Great!
-
-### Todos
-
- - Write Installation instructions
 
 License
 ----
