@@ -11,7 +11,8 @@
 module.exports =
 {
     // Working Directory:
-    context: __dirname + '/source',
+	context: __dirname + '\\source', // Windows
+    //context: __dirname + '/source', // Linux
 
     // App Entry Point:
     entry: './App/App.js',

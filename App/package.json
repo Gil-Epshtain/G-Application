@@ -6,20 +6,20 @@
   "license":     "MIT",
   "main":        "index.js",
   "scripts":
-  {
-    "start":       "node node_modules/.bin/webpack-dev-server --content-base source",
+  {	
+	"start":       ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
 
-    "srv":         "node node_modules/.bin/webpack-dev-server --content-base source",
-    "server":      "node node_modules/.bin/webpack-dev-server --content-base source",
+    "srv":         ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
+    "server":      ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
 
-    "dev":         "node node_modules/.bin/webpack && cp source/index.html www/index.html",
-    "development": "node node_modules/.bin/webpack && cp source/index.html www/index.html",
+    "dev":         ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
+    "development": ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
 
-    "prd":        "NODE_ENV=production node node_modules/.bin/webpack -p && cp source/index.html www/index.html",
-    "production": "NODE_ENV=production node node_modules/.bin/webpack -p && cp source/index.html www/index.html",
+    "prd":        "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
+    "production": "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
 
-    "cln":        "rm -r www/*",
-    "clean":      "rm -r www/*"
+    "cln":        "rmdir /s /q www\\",
+    "clean":      "rmdir /s /q www\\"
   },
   "devDependencies":
   {

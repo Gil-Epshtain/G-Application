@@ -1,0 +1,58 @@
+Due to difference between Linux and Windows file system and terminal commands,
+we need to make a few changes in the 'package.json' and in the 'webpack.config.js' files,
+before we start to development.
+
+################################################################
+### package.json ###
+# Edit the "package.json" file to fit the standard of your OS.
+# edit the 'scripts' block
+
+# For Linux OS:
+
+"scripts":
+{
+    "start":       "node node_modules/.bin/webpack-dev-server --content-base source",
+
+    "srv":         "node node_modules/.bin/webpack-dev-server --content-base source",
+    "server":      "node node_modules/.bin/webpack-dev-server --content-base source",
+
+    "dev":         "node node_modules/.bin/webpack && cp source/index.html www/index.html",
+    "development": "node node_modules/.bin/webpack && cp source/index.html www/index.html",
+
+    "prd":        "NODE_ENV=production node node_modules/.bin/webpack -p && cp source/index.html www/index.html",
+    "production": "NODE_ENV=production node node_modules/.bin/webpack -p && cp source/index.html www/index.html",
+
+    "cln":        "rm -r www/*",
+    "clean":      "rm -r www/*"
+},
+
+# For Window OS:
+
+"scripts":
+{
+	"start":       ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
+
+    "srv":         ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
+    "server":      ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
+
+    "dev":         ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
+    "development": ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
+
+    "prd":        "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
+    "production": "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
+
+    "cln":        "rmdir /s /q www\\",
+    "clean":      "rmdir /s /q www\\"
+},
+
+################################################################
+
+### webpack.config.js ###
+# In addition, for 'less' support you will need to edit the 'webpack.config.js' file.
+# edit the 'context' block:
+
+# For Linux:
+context: __dirname + '/source',
+
+# For Windows:
+context: __dirname + '\\source', 
