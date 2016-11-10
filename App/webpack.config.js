@@ -7,12 +7,14 @@
 // Cordova Plugin
 //var CordovaPlugin = require('webpack-cordova-plugin');
 
+// Path Plugin
+var path = require('path');
+
 // WebPack Configuration
 module.exports =
 {
     // Working Directory:
-	context: __dirname + '\\source', // Windows
-    //context: __dirname + '/source', // Linux
+    context: path.join(__dirname, 'source'),
 
     // App Entry Point:
     entry: './App/App.js',
@@ -25,21 +27,30 @@ module.exports =
         filename: 'script.js'
     },
 
-    // enable loading modules relatively
     resolve:
     {
-        root: [__dirname + "/source"]
+        // enable loading modules relatively
+        root: 
+        [
+            path.join(__dirname, 'source')
+        ]
     },
 
     module:
     {
         loaders:
         [
+            // TypeScript (TS)
+            {
+                test: /\.tsx?$/,
+                exclude: /node_modules/,
+                loader: "babel-loader!ts-loader" //"ts-loader"
+            },
             // ES6 (JS)
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader:"babel-loader",
+                loader: "babel-loader",
                 query:
                 {
                     presets: ['es2015']
@@ -49,7 +60,7 @@ module.exports =
             {
                 test: /\.html$/,
                 exclude: /node_modules/,
-                loader:"raw"
+                loader: "raw"
             },
             // Less (CSS)
             {
@@ -63,7 +74,7 @@ module.exports =
                 exclude: /node_modules/,
                 loader: "json"
             },
-            // Fonts //
+            // Fonts
             {
                 test: /\.(ttf|eot|otf)$/,
                 exclude: /node_modules/,
@@ -84,7 +95,6 @@ module.exports =
                     'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
                 ]
             }
-
         ]
     },
 

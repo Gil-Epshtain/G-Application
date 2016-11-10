@@ -95,7 +95,7 @@ Want to contribute? Great!
 License
 ----
 
-MIT
+MIT (c) Gil Epshtain
 
 
 **Free Software, Hell Yeah!**

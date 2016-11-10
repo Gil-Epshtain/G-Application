@@ -1,8 +1,11 @@
+####################### Window vs Linux ########################
+
 Due to difference between Linux and Windows file system and terminal commands,
 we need to make a few changes in the 'package.json' and in the 'webpack.config.js' files,
 before we start to development.
 
 ################################################################
+
 ### package.json ###
 # Edit the "package.json" file to fit the standard of your OS.
 # edit the 'scripts' block
@@ -56,3 +59,5 @@ context: __dirname + '/source',
 
 # For Windows:
 context: __dirname + '\\source', 
+
+################################################################

@@ -1,48 +1,52 @@
 {
-  "name":        "g-application",
-  "version":     "0.0.1",
+  "name": "g-application",
+  "version": "0.0.1",
   "description": "Gil Epshtain's Application",
-  "author":      "Gil Epshtain",
-  "license":     "MIT",
-  "main":        "index.js",
-  "scripts":
-  {	
-	"start":       ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
-
-    "srv":         ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
-    "server":      ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
-
-    "dev":         ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
-    "development": ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
-
-    "prd":        "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
-    "production": "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
-
-    "cln":        "rmdir /s /q www\\",
-    "clean":      "rmdir /s /q www\\"
-  },
-  "devDependencies":
+  "author": "Gil Epshtain",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": 
   {
-    "babel-core":             "^6.5.2",
-    "babel-loader":           "^6.2.3",
-    "babel-preset-es2015":    "^6.5.0",
-    "cordova":                "^6.0.0",
-    "css-loader":             "^0.23.1",
-    "file-loader":            "^0.8.5",
-    "image-webpack-loader":   "^1.6.3",
-    "json-loader":            "^0.5.4",
-    "less":                   "^2.6.0",
-    "less-loader":            "^2.2.2",
-    "raw-loader":             "^0.5.1",
-    "style-loader":           "^0.13.0",
-    "url-loader":             "^0.5.7",
-    "webpack":                "^1.12.14",
-    "webpack-cordova-plugin": "^0.1.6",
-    "webpack-dev-server":     "^1.14.1"
+    "start":        ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
+
+    "srv":          ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
+    "server":       ".\\node_modules\\.bin\\webpack-dev-server --content-base source",
+
+    "dev":          ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
+    "development":  ".\\node_modules\\.bin\\webpack && copy source\\index.html www\\index.html",
+
+    "prd":          "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
+    "production":   "SET NODE_ENV=production && .\\node_modules\\.bin\\webpack -p && copy source\\index.html www\\index.html",
+
+    "cln":          "rmdir /s /q www\\",
+    "clean":        "rmdir /s /q www\\"
   },
-  "dependencies":
+  "dependencies_comment": "Modules require for production and development! (Use -S [or '--save'] flag - after npm install X).",
+  "dependencies": 
   {
-    "angular":           "^1.5.0",
+    "angular": "^1.5.0",
     "angular-ui-router": "^0.2.18"
+  },
+  "devDependencies_comment": "Modules require for development only! (Use -D [or '--save-dev'] flag - after npm install X).",
+  "devDependenciels": 
+  {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "babel-preset-es2015": "^6.5.0",
+    "cordova": "^6.0.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "image-webpack-loader": "^1.6.3",
+    "json-loader": "^0.5.4",
+    "less": "^2.6.0",
+    "less-loader": "^2.2.2",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.0",
+    "ts-loader": "^1.1.0",
+    "typescript": "^2.0.8",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14",
+    "webpack-cordova-plugin": "^0.1.6",
+    "webpack-dev-server": "^1.14.1"
   }
 }
